@@ -181,4 +181,44 @@ def longass
 end
 #40824
 
+# def pythagorean
+#   a= 0.0
+#   b= 0.0
+#   c= 0
+#  pythag = [a,b,c]
 
+def pythagorean
+  array= []
+  a = (1..1000).to_a
+  b= (1..1000).to_a
+  j = 0
+  # below we get an array of all values of a and b upto 1000 where b> a
+  while j < 1000
+    a.each do |i|
+      array.push([i, j]) if j > i
+    end
+    j+=1
+  end
+  # for each of the values we select the values that are perfect squares. we push these values into another array.
+  pythags = []
+  array.each do |i|
+    c_squared = i[0]**2 + i[1]**2
+    c = Math.sqrt(c_squared)
+    if c.to_s.split(//).last == "0"
+      pythags.push([i[0], i[1], c.to_i]) if (i[0] + i[1] + c.to_i == 1000)
+    end
+  end
+
+  puts "For the array #{pythags.first}, our product is #{pythags.first.reduce(:*)}."  #the sum of those 3 is 1000xs
+end
+
+#10
+def sum_primes(number)
+  primes = []
+  array = (1..number-1).to_a
+    array.each do |i|
+     primes.push(i) if is_prime(i)
+  end
+  primes.reduce(:+) #returns sum of primes
+end
+#this takes a while to compute if u use 2,000,000.

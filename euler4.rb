@@ -212,6 +212,7 @@ def pythagorean
   puts "For the array #{pythags.first}, our product is #{pythags.first.reduce(:*)}."  #the sum of those 3 is 1000xs
 end
 
+
 #10
 def sum_primes(number)
   primes = []
@@ -222,3 +223,4 @@ def sum_primes(number)
   primes.reduce(:+) #returns sum of primes
 end
 #this takes a while to compute if u use 2,000,000.
+

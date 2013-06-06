@@ -4,7 +4,7 @@ require 'pry-debugger'
 def anagram(a,b)
   #bike
   #bikes
-looper(a.split(//), b.split(//)) || looper(b.split(//), a.split(//))
+looper(a.split(//), b.split(//)) && looper(b.split(//), a.split(//))
 
 end
 

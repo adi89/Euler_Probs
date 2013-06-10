@@ -38,3 +38,49 @@ def diveven
   end
 end
 
+# Exercise: Sort names by last name
+
+# Given an array of strings that represent names in "FIRSTNAME LASTNAME" form, use sort_by and split to return an array sorted by last names. For simplicity's sake, assume that each name consists of only two words separated by space (i.e. only "John Doe" and not "Mary Jo Doe").
+
+# names = ["John Smith", "Dan Boone", "Jennifer Jane", "Charles Lindy", "Jennifer Eight", "Rob Roy"]
+
+
+# def last_name
+# names = ["John Smith", "Dan Boone", "Jennifer Jane", "Charles Lindy", "Jennifer Eight", "Rob Roy"]
+
+# end
+# ignore the def last_name bit
+# or if anything we can just talk about this afterwards
+# i looked at the answer since I was unable to solve it
+# im trying to figure out what was wrong with my rationale
+
+def sort_name
+  names = ["John Smith", "Dan Boone", "Jennifer Jane", "Charles Lindy", "Jennifer Eight", "Rob Roy"]
+
+  names.map!{|i|i.split}.sort_by!{|i| i[1]}.map!{|i| i.join(" ")}
+
+end
+
+def sort_namez
+  names = ["John Smith", "Dan Boone", "Jennifer Jane", "Charles Lindy", "Jennifer Eight", "Rob Roy", "1 2", "adi singh"]
+  a= []
+  names.each do |i|
+    a.push(i.split)
+  end
+
+  a.sort_by!{|i| i[1]}
+  j = []
+  a.each do |i|
+    j.push (i.join(' '))
+  end
+  j
+
+end
+
+
+def solution
+  names = ["John Smith", "Dan Boone", "Jennifer Jane", "Charles Lindy", "Jennifer Eight", "Rob Roy"]
+  sorted_names = names.sort_by do |name|
+    name.split(" ").reverse.join.upcase
+  end
+end

@@ -4,7 +4,7 @@ require 'pry-debugger'
 def anagram(a,b)
   #bike
   #bikes
-looper(a.split(//), b.split(//)) && looper(b.split(//), a.split(//))
+  looper(a.split(//), b.split(//)) && looper(b.split(//), a.split(//))
 
 end
 
@@ -23,6 +23,18 @@ def looper(string_a, string_b)
     return true
   else
     return false
+  end
+end
+
+def diveven
+  (1..25).to_a.each do |i|
+    k= []
+    (1..1000).to_a.each do |j|
+      if j%i == 0
+        k.push(j)
+      end
+    end
+    puts "There are #{k.count} numbers divisible by #{i} from 1 to 1000"
   end
 end
 
